@@ -14,12 +14,6 @@ const AuditLogs = () => {
         end_date: ''
     });
 
-    useEffect(() => {
-        if (user?.role === 'admin') {
-            fetchLogs();
-        }
-    }, [user]);
-
     const fetchLogs = async () => {
         try {
             setLoading(true);
@@ -38,6 +32,13 @@ const AuditLogs = () => {
             setLoading(false);
         }
     };
+
+    useEffect(() => {
+        if (user?.role === 'admin') {
+            fetchLogs();
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [user]);
 
     const handleFilterChange = (e) => {
         setFilters({ ...filters, [e.target.name]: e.target.value });
