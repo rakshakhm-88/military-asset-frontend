@@ -8,6 +8,7 @@ const MovementBreakdown = ({ item, filters, onClose }) => {
 
     useEffect(() => {
         fetchBreakdown();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const fetchBreakdown = async () => {

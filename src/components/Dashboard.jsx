@@ -21,6 +21,7 @@ const Dashboard = () => {
     useEffect(() => {
         fetchDashboard();
         fetchBasesAndAssets();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const fetchBasesAndAssets = async () => {
